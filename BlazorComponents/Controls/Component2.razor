@@ -1,5 +1,5 @@
 ﻿<div class="ml-5">
-<h3>Component2</h3>
+<h3 style="color:@Color">Component2</h3>
 
 <p>
     Count: @CountValue
@@ -9,4 +9,6 @@
 @code {
     [CascadingParameter(Name = "Counter")]
     public int CountValue { get; set; }
+    [CascadingParameter(Name = "TitleColor")]
+    public string? Color { get; set; }
 }
