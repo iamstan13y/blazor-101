@@ -6,8 +6,10 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-<CascadingValue Name="Counter" Value="@currentCount">
-<Component1></Component1>
+<CascadingValue Name="Counter" Value="@currentCount" IsFixed="true">
+    <CascadingValue Name="TitleColor" Value="@("blue")">
+        <Component1></Component1>
+    </CascadingValue>
 </CascadingValue>
 
 @code {
