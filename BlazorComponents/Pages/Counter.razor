@@ -1,5 +1,4 @@
-﻿@page "/counter"
-
+﻿
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
@@ -13,10 +12,14 @@
 </CascadingValue>
 
 @code {
+    [Parameter]
+    public EventCallback<int> SetCurrentCount { get; set; }
+
     private int currentCount = 0;
 
     private void IncrementCount()
     {
         currentCount++;
+        SetCurrentCount.InvokeAsync(currentCount);
     }
 }
